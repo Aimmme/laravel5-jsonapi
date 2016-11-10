@@ -46,13 +46,13 @@
 Use [Composer](https://getcomposer.org) to install the package:
 
 ```
-$ composer require nilportugues/laravel5-json-api
+composer require nilportugues/laravel5-json-api
 ```
 
 Now run the following artisan command: 
 
 ```
-$ php artisan vendor:publish
+php artisan vendor:publish
 ```
 
 ## Configuration (Laravel 5 & Lumen)
@@ -401,6 +401,15 @@ class OrdersTransformer implements JsonApiMapping
     {
         return [];
     }
+    
+    /**
+     * List the fields that are mandatory in a persitence action (POST/PUT). 
+     * If empty array is returned, all fields are mandatory.
+     */
+    public function getRequiredProperties()
+    {
+        return [];
+    }    
 } 
 ```
 
